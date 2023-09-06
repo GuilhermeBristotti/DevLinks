@@ -55,7 +55,7 @@ color: var(--text-color);
 
 #switch {
   position: relative;
-  width: 66px;
+  width: 64px;
   margin: 4px auto;
   
   
@@ -72,11 +72,11 @@ color: var(--text-color);
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  animation: slide-out 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -135,4 +135,23 @@ ul li a:hover {
 footer {
   padding: 24px 0;
   text-align: center;
+}
+
+@keyframes slide-in {
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
